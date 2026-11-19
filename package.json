@@ -1,0 +1,14 @@
+{
+  "name": "tessera-ctl",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "A proof-carrying CTL model checker for finite transition systems",
+  "license": "MIT",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node src/cli.js demo",
+    "benchmark": "node src/benchmark.js"
+  }
+}

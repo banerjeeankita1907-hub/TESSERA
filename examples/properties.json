@@ -1,0 +1,53 @@
+[
+  {
+    "name": "paid_always_eventually_settles",
+    "description": "On every path, a paid state is followed by a settled state.",
+    "expectedAtInitial": true,
+    "formula": {
+      "op": "AG",
+      "arg": {
+        "op": "implies",
+        "left": { "op": "atom", "name": "paid" },
+        "right": { "op": "AF", "arg": { "op": "atom", "name": "settled" } }
+      }
+    }
+  },
+  {
+    "name": "every_execution_reaches_a_terminal_state",
+    "description": "All possible executions eventually reach settlement or expiry.",
+    "expectedAtInitial": true,
+    "formula": {
+      "op": "AF",
+      "arg": {
+        "op": "or",
+        "left": { "op": "atom", "name": "settled" },
+        "right": { "op": "atom", "name": "expired" }
+      }
+    }
+  },
+  {
+    "name": "expiry_is_reachable",
+    "description": "There exists an execution that can expire.",
+    "expectedAtInitial": true,
+    "formula": { "op": "EF", "arg": { "op": "atom", "name": "expired" } }
+  },
+  {
+    "name": "settlement_is_not_unavoidable",
+    "description": "There is an expiry path, so settlement is not inevitable from the initial state.",
+    "expectedAtInitial": false,
+    "formula": { "op": "AF", "arg": { "op": "atom", "name": "settled" } }
+  },
+  {
+    "name": "held_has_a_path_to_payment",
+    "description": "From the held state, some path reaches payment before leaving the held region.",
+    "expectedAtInitial": true,
+    "formula": {
+      "op": "AG",
+      "arg": {
+        "op": "implies",
+        "left": { "op": "atom", "name": "funds_held" },
+        "right": { "op": "EF", "arg": { "op": "atom", "name": "paid" } }
+      }
+    }
+  }
+]

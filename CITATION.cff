@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use TESSERA, cite the repository and describe the exact version used."
+title: "TESSERA: Proof-Carrying CTL Model Checking"
+type: software
+license: MIT
+version: 0.1.0
+date-released: 2026-11-19
+authors:
+  - name: "TESSERA maintainers"
+repository-code: "https://github.com/banerjeeankita1907-hub/TESSERA"

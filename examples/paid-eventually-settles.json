@@ -1,0 +1,8 @@
+{
+  "op": "AG",
+  "arg": {
+    "op": "implies",
+    "left": { "op": "atom", "name": "paid" },
+    "right": { "op": "AF", "arg": { "op": "atom", "name": "settled" } }
+  }
+}

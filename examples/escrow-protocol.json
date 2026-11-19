@@ -1,0 +1,21 @@
+{
+  "id": "escrow-settlement-protocol-v1",
+  "states": ["requested", "held", "paid", "settled", "expired"],
+  "initial": ["requested"],
+  "labels": {
+    "requested": ["request_open"],
+    "held": ["funds_held", "nonterminal"],
+    "paid": ["paid", "nonterminal"],
+    "settled": ["terminal", "settled"],
+    "expired": ["expired", "terminal"]
+  },
+  "transitions": [
+    ["requested", "held"],
+    ["requested", "expired"],
+    ["held", "paid"],
+    ["held", "expired"],
+    ["paid", "settled"],
+    ["settled", "settled"],
+    ["expired", "expired"]
+  ]
+}
